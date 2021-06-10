@@ -1,0 +1,38 @@
+{
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "plugins": [
+    "@typescript-eslint"
+  ],
+  "env": {
+    "browser": true,
+    "amd": true,
+    "node": true
+  },
+  "extends": [
+    "airbnb-typescript",
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "rules": {
+    "jsx-a11y/label-has-associated-control": ["error", {
+      "required": {
+        "some": ["nesting", "id"]
+      }
+    }],
+    "jsx-a11y/label-has-for": ["error", {
+      "required": {
+        "some": ["nesting", "id"]
+      }
+    }]
+  },
+  "ignorePatterns": [
+    "craco.config.js",
+    "tailwind.config.js",
+    "postcss.config.js"
+  ]
+}
