@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function CreateAccount() {
   return (
@@ -82,6 +83,11 @@ function CreateAccount() {
                 <div className="flex -mx-3">
                   <div className="w-full px-3 mb-5">
                     <button type="button" className="block w-full max-w-xs mx-auto bg-indigo-500 hover:bg-indigo-700 focus:bg-indigo-700 text-white rounded-lg px-3 py-3 font-semibold">REGISTER NOW</button>
+                  </div>
+                </div>
+                <div className="flex -mx-3">
+                  <div className="w-full px-3 mb-5">
+                    <Link to="/" className="block text-center max-w-xs mx-auto font-light text-md text-indigo-600 underline font-semibold hover:text-indigo-800">Home</Link>
                   </div>
                 </div>
               </div>
