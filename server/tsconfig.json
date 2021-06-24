@@ -3,12 +3,13 @@
     "compilerOptions": {
       "module": "commonjs",
       "strict": true,
-      "outDir": "build",
+      "outDir": "dist",
       "sourceMap": true,
       "removeComments": true,
       "experimentalDecorators": true,
       "target": "es6",
       "emitDecoratorMetadata": true,
+      "esModuleInterop": true,
       "moduleResolution": "node",
       "importHelpers": true,
       "types": [
