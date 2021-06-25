@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import registerUser from '../services';
+import { registerUser } from '../services';
 
 function CreateAccount() {
   return (

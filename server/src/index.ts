@@ -9,7 +9,7 @@ class UserServer extends Server {
     constructor() {
         super();
 
-        let userController = new UserController();
+        const userController = new UserController();
 
         super.addControllers( userController );
     }

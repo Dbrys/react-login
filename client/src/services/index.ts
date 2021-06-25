@@ -1,10 +1,23 @@
 import axios from 'axios';
 
-const registerUser = async () => {
-  const url = 'http://localhost:8080/';
-  const res = await axios.get(url);
-  console.log(res.data);
-  return res;
+const { REACT_APP_BASE_URL: BASE_URL } = process.env;
+
+export const registerUser = async () => {
+  try {
+    const res = await axios.get(`${BASE_URL}`);
+    return res;
+  } catch (e) {
+    console.error(e);
+    return e;
+  }
 };
 
-export default registerUser;
+export const getUser = async () => {
+  try {
+    const res = await axios.get(`${BASE_URL}`);
+    return res;
+  } catch (e) {
+    console.error(e);
+    return e;
+  }
+};

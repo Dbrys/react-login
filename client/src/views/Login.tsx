@@ -43,22 +43,6 @@ function Login() {
                 </div>
                 <div>
                   <div className="flex -mx-3">
-                    <div className="w-1/2 px-3 mb-5">
-                      <label htmlFor="firstName" className="text-xs font-semibold px-1">First name</label>
-                      <div className="flex">
-                        <div className="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i className="mdi mdi-account-outline text-gray-400 text-lg" /></div>
-                        <input id="firstName" type="text" className="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500" placeholder="John" />
-                      </div>
-                    </div>
-                    <div className="w-1/2 px-3 mb-5">
-                      <label htmlFor="lastName" className="text-xs font-semibold px-1">Last name</label>
-                      <div className="flex">
-                        <div className="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i className="mdi mdi-account-outline text-gray-400 text-lg" /></div>
-                        <input id="lastName" type="text" className="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500" placeholder="Smith" />
-                      </div>
-                    </div>
-                  </div>
-                  <div className="flex -mx-3">
                     <div className="w-full px-3 mb-5">
                       <label htmlFor="user_email" className="text-xs font-semibold px-1">Email</label>
                       <div className="flex">

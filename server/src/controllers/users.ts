@@ -10,7 +10,6 @@ export class UserController {
 
     @Get()
     get(req: Request, res: Response): any {
-        // console.log(req.params.id);
         return res.status(200).json({msg: 'get_called'});
     }
 
