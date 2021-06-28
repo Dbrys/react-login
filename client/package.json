@@ -13,6 +13,8 @@
     "@types/react-dom": "^17.0.0",
     "@types/react-router-dom": "^5.1.7",
     "autoprefixer": "^9.8.6",
+    "axios": "^0.21.1",
+    "dotenv": "^10.0.0",
     "postcss": "^7.0.35",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -22,7 +24,7 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "start": "craco start",
+    "start": "PORT=3006 craco start",
     "build": "craco build",
     "test": "craco test",
     "eject": "react-scripts eject",
