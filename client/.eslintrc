@@ -28,7 +28,8 @@
       "required": {
         "some": ["nesting", "id"]
       }
-    }]
+    }],
+    "react/jsx-props-no-spreading": "off"
   },
   "ignorePatterns": [
     "craco.config.js",

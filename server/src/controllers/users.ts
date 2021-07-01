@@ -8,9 +8,9 @@ import cors from 'cors';
 @ClassMiddleware([cors()])
 export class UserController {
 
-    @Get()
-    get(req: Request, res: Response): any {
-        return res.status(200).json({msg: 'get_called'});
+    @Post('register_user')
+    post(req: Request, res: Response): any {
+        return res.status(200).json({msg: 'get_called', data: req});
     }
 
 }
