@@ -1,10 +1,29 @@
+import { userInfo } from 'os';
 import React from 'react';
+import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
 import { registerUser } from '../services';
 
+type RegisterUser = {
+  firstName: string;
+  lastName: string;
+  email: string;
+  password: string;
+};
+
 function CreateAccount() {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<RegisterUser>();
+
+  const onSubmit = (data: RegisterUser) => {
+    registerUser(data);
+  };
+
   return (
-    <form>
+    <form onSubmit={handleSubmit(onSubmit)}>
       <div className="min-w-screen min-h-screen flex items-center justify-center px-5 py-5">
         <div className="bg-gray-100 text-gray-500 rounded-3xl shadow-xl w-full overflow-hidden">
           <div className="md:flex w-full">
@@ -52,15 +71,17 @@ function CreateAccount() {
                     <label htmlFor="firstName" className="text-xs font-semibold px-1">First name</label>
                     <div className="flex">
                       <div className="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i className="mdi mdi-account-outline text-gray-400 text-lg" /></div>
-                      <input id="firstName" type="text" className="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500" placeholder="John" />
+                      <input id="firstName" type="text" {...register('firstName', { required: true })} className="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500" placeholder="John" />
                     </div>
+                    {errors.firstName && <p className="text-red-500 text-xs italic">Please Enter your First Name.</p>}
                   </div>
                   <div className="w-1/2 px-3 mb-5">
                     <label htmlFor="lastName" className="text-xs font-semibold px-1">Last name</label>
                     <div className="flex">
                       <div className="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i className="mdi mdi-account-outline text-gray-400 text-lg" /></div>
-                      <input id="lastName" type="text" className="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500" placeholder="Smith" />
+                      <input id="lastName" type="text" {...register('lastName', { required: true })} className="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500" placeholder="Smith" />
                     </div>
+                    {errors.email && <p className="text-red-500 text-xs italic">Please Enter your Last Name.</p>}
                   </div>
                 </div>
                 <div className="flex -mx-3">
@@ -68,8 +89,9 @@ function CreateAccount() {
                     <label htmlFor="user_email" className="text-xs font-semibold px-1">Email</label>
                     <div className="flex">
                       <div className="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i className="mdi mdi-email-outline text-gray-400 text-lg" /></div>
-                      <input id="user_email" type="email" className="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500" placeholder="johnsmith@example.com" />
+                      <input id="user_email" type="email" {...register('email', { required: true })} className="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500" placeholder="johnsmith@example.com" />
                     </div>
+                    {errors.email && <p className="text-red-500 text-xs italic">Please Enter your email.</p>}
                   </div>
                 </div>
                 <div className="flex -mx-3">
@@ -77,13 +99,14 @@ function CreateAccount() {
                     <label htmlFor="user_pass" className="text-xs font-semibold px-1">Password</label>
                     <div className="flex">
                       <div className="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i className="mdi mdi-lock-outline text-gray-400 text-lg" /></div>
-                      <input id="user_pass" type="password" className="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500" placeholder="************" />
+                      <input id="user_pass" type="password" {...register('password', { required: true })} className="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500" placeholder="************" />
                     </div>
+                    {errors.password && <p className="text-red-500 text-xs italic">Please Enter a password.</p>}
                   </div>
                 </div>
                 <div className="flex -mx-3">
                   <div className="w-full px-3 mb-5">
-                    <button type="button" className="block w-full max-w-xs mx-auto bg-indigo-500 hover:bg-indigo-700 focus:bg-indigo-700 text-white rounded-lg px-3 py-3 font-semibold" onClick={registerUser}>REGISTER NOW</button>
+                    <button type="submit" className="block w-full max-w-xs mx-auto bg-indigo-500 hover:bg-indigo-700 focus:bg-indigo-700 text-white rounded-lg px-3 py-3 font-semibold">REGISTER NOW</button>
                   </div>
                 </div>
                 <div className="flex -mx-3">
