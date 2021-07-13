@@ -12,6 +12,10 @@ interface User {
 export const registerUser = async (userInfo: User) => {
   try {
     const res = await axios.post(`${BASE_URL}/register_user`, userInfo);
+    if (res.status === 200) {
+      console.log(res.data);
+      return true;
+    }
     return res;
   } catch (e) {
     console.error(e);
