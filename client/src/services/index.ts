@@ -19,7 +19,7 @@ export const registerUser = async (userInfo: User) => {
     return res;
   } catch (e) {
     console.error(e);
-    return e;
+    return false;
   }
 };
 

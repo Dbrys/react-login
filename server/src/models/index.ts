@@ -9,16 +9,16 @@ type User = {
     lastName: string;
     email: string;
     password: string;
-  };
-  
-export const createUser = async (reqBod:User ) => {
+};
+
+export const createUser = async (reqBod: User) => {
     try {
         Logger.Info('Inside Create user');
-        Logger.Info(reqBod,true)
-        const createUser = await prisma.user.create({data:reqBod})
-    } 
-    catch(e) {
-        return e; 
+        Logger.Info(reqBod, true)
+        const createUser = await prisma.user.create({ data: reqBod })
     }
-    
+    catch (e) {
+        return e;
+    }
+
 }
