@@ -19,10 +19,10 @@ function Login(): JSX.Element {
   return (
     <div className="App">
       <form onSubmit={handleSubmit(handleUserLogin)}>
-        <div className="min-w-screen min-h-screen flex items-center justify-center px-5 py-5">
-          <div className="bg-gray-100 text-gray-500 rounded-3xl shadow-xl w-full overflow-hidden">
-            <div className="md:flex w-full">
-              <div className="hidden md:block w-1/2 bg-indigo-500 py-10 px-10">
+        <div className="flex items-center justify-center px-5 py-5">
+          <div className="bg-gray-100 text-gray-500 rounded-3xl shadow-xl overflow-hidden">
+            <div className="flex flex-col w-full">
+              <div className="hidden md:flex bg-indigo-500 py-10 px-10">
                 <svg
                   id="b368e7d6-7c4a-408c-9a35-0514749a7e1a"
                   data-name="Layer 1"
@@ -159,7 +159,7 @@ function Login(): JSX.Element {
                   />
                 </svg>
               </div>
-              <div className="w-full md:w-1/2 py-10 px-5 md:px-10">
+              <div className="w-full py-10 px-5 md:px-10">
                 <div className="text-center mb-10">
                   <h1 className="font-bold text-3xl text-gray-900">Login</h1>
                 </div>

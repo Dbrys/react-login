@@ -41,15 +41,15 @@ function CreateAccount(): JSX.Element {
   return (
     <div>
       <form onSubmit={handleSubmit(handleRegisterUser)}>
-        <div className="min-w-screen min-h-screen flex items-center justify-center px-5 py-5">
-          <div className="bg-gray-100 text-gray-500 rounded-3xl shadow-xl w-full overflow-hidden">
-            <div className="md:flex w-full">
-              <div className="hidden md:block w-1/2 bg-indigo-500 py-10 px-10">
+        <div className="flex items-center justify-center px-5 py-5">
+          <div className="bg-gray-100 text-gray-500 rounded-3xl shadow-xl overflow-hidden">
+            <div className="flex flex-col w-full">
+              <div className="hidden md:flex items-center justify-center bg-indigo-500 py-10 px-10">
                 <svg
                   id="a87032b8-5b37-4b7e-a4d9-4dbfbe394641"
                   data-name="Layer 1"
                   xmlns="http://www.w3.org/2000/svg"
-                  width="100%"
+                  width="40%"
                   height="100%"
                   viewBox="0 0 744.84799 747.07702"
                 >
@@ -249,7 +249,7 @@ function CreateAccount(): JSX.Element {
                   />
                 </svg>
               </div>
-              <div className="w-full md:w-1/2 py-10 px-5 md:px-10">
+              <div className="w-full py-10 px-5 md:px-10">
                 <div className="text-center mb-10">
                   <h1 className="font-bold text-3xl text-gray-900">REGISTER</h1>
                   <p>Enter your information to register</p>
